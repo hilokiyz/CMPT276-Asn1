@@ -51,44 +51,50 @@ function histogram() {
     var output = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
     for (var i = 0; i < grades.length; i++) {
       var trigger = false;
-      for (var j = 0; j < BoundInput.length - 1; j++) {
-        if (parseFloat(grades[i]) < parseFloat(BoundInput[j]) && parseFloat(grades[i]) >= parseFloat(BoundInput[j + 1])) {
-          output[j] += 1;
-          trigger = true;
+      if (grades[i] == 100) {
+        output[0] += 1;
+        trigger = true;
+      } else {
+        for (var j = 0; j < BoundInput.length - 1; j++) {
+          if (parseFloat(grades[i]) < parseFloat(BoundInput[j]) && parseFloat(grades[i]) >= parseFloat(BoundInput[j + 1])) {
+            output[j] += 1;
+            trigger = true;
+          }
         }
       }
 
-      if (!trigger) {
-        console.log("The user data for", grades[i], "has been omitted");
-      }
-    }
 
-    //display histogram
-    for (var i = 0; i < 11; i++) {
-      var text = "";
-      for (var j = 0; j < output[i]; j++) {
-        text += "0";
+        if (!trigger) {
+          console.log("The user data for", grades[i], "has been omitted");
+        }
       }
-      document.getElementsByClassName('BarLabel')[i].innerHTML = text;
-    }
 
-  } else {
-    console.log("no grades exist for graphing");
+      //display histogram
+      for (var i = 0; i < 11; i++) {
+        var text = "";
+        for (var j = 0; j < output[i]; j++) {
+          text += "0";
+        }
+        document.getElementsByClassName('BarLabel')[i].innerHTML = text;
+      }
+
+    } else {
+      console.log("no grades exist for graphing");
+    }
   }
-}
 
-//function to start other functions/processes on startup
-function init() {
-  initializeGrades();
-  var gradeInput = document.getElementsByClassName('GI')[0];
-  // Execute a function when the user presses a key on the keyboard
-  gradeInput?.addEventListener("keypress", function (event) {
-    if (event.key === "Enter") {
-      addGrade();
-    }
-  });
-  histogram();
-}
+  //function to start other functions/processes on startup
+  function init() {
+    initializeGrades();
+    var gradeInput = document.getElementsByClassName('GI')[0];
+    // Execute a function when the user presses a key on the keyboard
+    gradeInput?.addEventListener("keypress", function (event) {
+      if (event.key === "Enter") {
+        addGrade();
+      }
+    });
+    histogram();
+  }
 
-window.addEventListener("DOMContentLoaded", init);
+  window.addEventListener("DOMContentLoaded", init);
 
