@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheet/histogram.css">
+    <script src="js/calculate.js"></script>
+    <title>Histogram Generator</title>
+</head>
+
+<body>
+    <header>
+        <h1>Histogram Generator</h1>
+    </header>
+
+    <main>
+        <section class="Bounds">
+            <h3>Lower Bounds</h3>
+            <form class="BoundI">
+                <div class="input">
+                    <label for="MaxI">Max</label>
+                    <input type="number" id="MaxI" name="MaxI" data-index="0" step="0.01" min="0" max="100" required
+                        value="100.00">
+                </div>
+                <div class="input">
+                    <label for="A+I">A+</label>
+                    <input type="number" id="A+I" name="A+I" data-index="1" step="0.01" min="0" max="100" required
+                        value="95.00">
+                </div>
+                <div class="input">
+                    <label for="AI">A</label>
+                    <input type="number" id="AI" name="AI" data-index="2" step="0.01" min="0" max="100" required
+                        value="90.00">
+                </div>
+                <div class="input">
+                    <label for="A-I">A-</label>
+                    <input type="number" id="A-I" name="A-I" data-index="3" step="0.01" min="0" max="100" required
+                        value="85.00">
+                </div>
+                <div class="input">
+                    <label for="B+I">B+</label>
+                    <input type="number" id="B+I" name="B+I" data-index="4" step="0.01" min="0" max="100" required
+                        value="80.00">
+                </div>
+                <div class="input">
+                    <label for="BI">B</label>
+                    <input type="number" id="BI" name="BI" data-index="5" step="0.01" min="0" max="100" required
+                        value="75.00">
+                </div>
+                <div class="input">
+                    <label for="B-I">B-</label>
+                    <input type="number" id="B-I" name="B-I" data-index="6" step="0.01" min="0" max="100" required
+                        value="70.00">
+                </div>
+                <div class="input">
+                    <label for="C+I">C+</label>
+                    <input type="number" id="C+I" name="C+I" data-index="7" step="0.01" min="0" max="100" required
+                        value="65.00">
+                </div>
+                <div class="input">
+                    <label for="CI">C</label>
+                    <input type="number" id="CI" name="CI" data-index="8" step="0.01" min="0" max="100" required
+                        value="60.00">
+                </div>
+                <div class="input">
+                    <label for="C-I">C-</label>
+                    <input type="number" id="C-I" name="C-I" data-index="9" step="0.01" min="0" max="100" required
+                        value="55.00">
+                </div>
+                <div class="input">
+                    <label for="DI">D</label>
+                    <input type="number" id="DI" name="DI" data-index="10" step="0.01" min="0" max="100" required
+                        value="50.00">
+                </div>
+                <div class="input">
+                    <label for="FI">F</label>
+                    <input type="number" id="FI" name="FI" data-index="11" step="0.01" min="0" max="100" required
+                        value="0.00">
+                </div>
+
+            </form>
+        </section>
+
+        <div class="Results">
+            <section class="Histogram">
+                <h3>Histogram</h3>
+                <div class="Graph">
+                    <div class="GradeLabel">A+</div>
+                    <div class="BarLabel" data-label="0"></div>
+                    <div class="GradeLabel">A</div>
+                    <div class="BarLabel" data-label="1"></div>
+                    <div class="GradeLabel">A-</div>
+                    <div class="BarLabel" data-label="2"></div>
+                    <div class="GradeLabel">B+</div>
+                    <div class="BarLabel" data-label="3"></div>
+                    <div class="GradeLabel">B</div>
+                    <div class="BarLabel" data-label="4"></div>
+                    <div class="GradeLabel">B-</div>
+                    <div class="BarLabel" data-label="5"></div>
+                    <div class="GradeLabel">C+</div>
+                    <div class="BarLabel" data-label="6"></div>
+                    <div class="GradeLabel">C</div>
+                    <div class="BarLabel" data-label="7"></div>
+                    <div class="GradeLabel">C-</div>
+                    <div class="BarLabel" data-label="8"></div>
+                    <div class="GradeLabel">D</div>
+                    <div class="BarLabel" data-label="9"></div>
+                    <div class="GradeLabel">F</div>
+                    <div class="BarLabel" data-label="10"></div>
+                </div>
+            </section>
+
+            <section class="GradeInput">
+                <div class="GradeInputbox">
+                    <h4>New Grade:</h4>
+                    <input type="number" class = "GI" id="GI" step="0.01" min="0" max="100">
+                </div>
+            </section>
+        </div>
+    </main>
+
+</body>

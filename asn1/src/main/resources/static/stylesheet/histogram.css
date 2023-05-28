@@ -1,0 +1,120 @@
+body{
+    margin: 10px;
+}
+
+main{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 8px;
+}
+
+.Results{
+    width: calc(100% - 300px - 20px - 8px);
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+.Histogram{ 
+    width: 100%;
+    background-color: rgb(200, 230, 255); 
+    flex: 1;
+}
+
+.GradeInput{
+    width: 100%;
+    background-color: rgb(200, 230, 255);
+    flex: 1;
+    padding:10px 20px;
+}
+
+section{
+    padding: 5px 20px;
+}
+
+.Bounds{
+    max-width: 300px;
+    width: 260px;
+    background-color: rgb(200, 230, 255);
+}
+
+h3{
+    margin:0;
+    color: rgb(180, 14, 14);
+}
+
+.BoundI{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap:20px;
+    margin: 15px 0;
+}
+
+.input>label{
+    max-width: 300px;
+    width: fit-content;
+    margin: 25px;
+}
+
+.input>input{
+    float: right;
+    width: 75px;
+    margin-right: 40px;
+}
+
+.input>input[type=text]:focus{
+    background-color: lightgrey;
+}
+
+.Graph{
+    padding: 15px 20px;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    row-gap: 5px;
+}
+
+.GradeInputbox{
+    display: grid;
+    grid-template-columns: 30% 70%;
+    row-gap: 10%;
+}
+
+h4{
+    margin: 0px;
+}
+
+.GradeInputbox>input{
+    size: 150px 15px;
+}
+
+
+@media only screen and (max-width:300px){
+    .input>input{
+        width: 20%;
+        margin-right: 10px;
+    }
+    .input>label{
+        margin: 5px
+    }
+    .Results{
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width:680px) and (min-width:301px){
+    main{
+        flex-direction: column;
+    }
+    .Bounds{
+        width: 100%;
+    }
+    .Results{
+        width: 100%;
+    }
+} 
