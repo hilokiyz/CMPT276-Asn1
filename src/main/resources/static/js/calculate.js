@@ -13,25 +13,35 @@ function initializeGrades() {
       if (event.key === "Enter") {
         var newValue = this.value;
         var BoundPos = this.getAttribute("data-index");
-        updateArray(Number(newValue), Number(BoundPos));
+        updateArray(newValue, Number(BoundPos));
       }
     })
   }
 }
 
 function updateArray(value, index) {
-  if (value < 0 || value > 100 || value.length == 0) {
-    alert("Please enter a value from 0 to 100");
-  } else if (index == 0 && value <= BoundInput[index + 1]) {
-    alert("Entered value is less than or equal to the grade lower");
-  } else if (index == 11 && value >= BoundInput[index - 1]) {
-    alert("Entered value is higher than or equal to the grade higher");
-  } else if (value <= BoundInput[index + 1] || value >= BoundInput[index - 1]) {
-    alert("Entered value doesn't follow grading constraints");
-  } else {
-    BoundInput[index] = value;
-    histogram();
+  if(value == ''){
+    alert("Please enter a number between 0 to 100");
+  }else{
+    value = Number(value);
+    if (value < 0 || value > 100) {
+      document.getElementsByClassName('BoundI')[0][index].value = BoundInput[index];
+      alert("Please enter a value from 0 to 100");
+    } else if (index == 0 && value <= BoundInput[index + 1]) {
+      document.getElementsByClassName('BoundI')[0][index].value = BoundInput[index];
+      alert("Entered value is less than or equal to the grade lower");
+    } else if (index == 11 && value >= BoundInput[index - 1]) {
+      document.getElementsByClassName('BoundI')[0][index].value = BoundInput[index];
+      alert("Entered value is higher than or equal to the grade higher");
+    } else if (value <= BoundInput[index + 1] || value >= BoundInput[index - 1]) {
+      document.getElementsByClassName('BoundI')[0][index].value = BoundInput[index];
+      alert("Entered value doesn't follow grading constraints");
+    } else {
+      BoundInput[index] = value;
+      histogram();
+    }
   }
+  
 }
 
 //function that adds grade value to grade list
